@@ -12,7 +12,7 @@ const pizzaMenu = `
   <option value="" selected disabled>Maybe one of these... ?</option>
   <option value="Margerita">Margerita</option>
   <option value="Vesuvio">Vesuvio</option>
-  <option value="Capriciosa">Capriciosa</option>
+  <option value="Capricciosa">Capricciosa</option>
 </select>
 `
 
@@ -75,10 +75,12 @@ const askForConfirmation = (amount, selectedDish) => {
   {
     showMessage(`Alright, you want ${amount} ${selectedDish} ${globalFood}s?`, 'bot')
   }
+  
   inputWrapper.innerHTML = `
   <button id="confirm">Yeah!</button>
   <button id="restart">Not quite</button>
   `
+  chat.scrollTop = chat.scrollHeight
   document.getElementById("restart").addEventListener("click", () => location.reload())
   document.getElementById("confirm").addEventListener("click", () => {
     inputWrapper.innerHTML = ""
@@ -87,16 +89,20 @@ const askForConfirmation = (amount, selectedDish) => {
       if (amount < 2)
       {
       showMessage(`Thank you ${userName}! Enjoy the ${selectedDish} ${globalFood}!`, 'bot')
+      chat.scrollTop = chat.scrollHeight
       }
       else
       {
         showMessage(`Thank you ${userName}! Enjoy the ${selectedDish} ${globalFood}s!`, 'bot')
+        chat.scrollTop = chat.scrollHeight
       }
-      inputWrapper.innerHTML = `
-      <img src="assets/Harold_success_2.gif"\>
-      `
+
     
     }, 1000)
+    inputWrapper.innerHTML = `
+    <img src="assets/Harold_success_2.gif"\>
+    `
+    chat.scrollTop = chat.scrollHeight
   })
 }
 
