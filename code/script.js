@@ -167,9 +167,9 @@ const askForDish = (foodChoice) => {
 const menuChoice = () => {
 
   inputWrapper.innerHTML = `
-  <button id="pizzaButton">Pizza</button>
-  <button id="pastaButton">Pasta</button>
-  <button id="saladButton">Salad</button>
+  <button id="pizzaButton">Pizza 🍕</button>
+  <button id="pastaButton">Pasta 🍝</button>
+  <button id="saladButton">Salad 🥗</button>
   `
 
   document.getElementById("pizzaButton").addEventListener("click", () => askForDish("pizza"))
